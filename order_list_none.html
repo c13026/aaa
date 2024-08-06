@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物清單|行動學習網</title>
+    <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- 引用icon當作文字變色 放大縮小 -->
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        main>.container-fluid>.container {
+            padding: 0px;
+            min-height: 900px;
+            background-image: url(images/order-bg1.svg);
+            background-position: 85% 95%;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 766px) {
+            main>.container-fluid>.container {
+                background-position: 50% 95%;
+                background-size: 85%;
+                min-height: 700px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid d-none d-md-block" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-l.jpg">
+        </div>
+        <div class="container-fluid d-md-none" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-s.jpg">
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid" style="background-color: #EEF6F9;">
+            <div class="container" style="background-color: #FFF;">
+                <img class="img-fluid d-none d-xl-inline-block" src="images/order-l-step1.svg">
+                <img class="img-fluid d-none d-sm-inline-block d-xl-none" src="images/order-step1.svg">
+                <img class="img-fluid d-sm-none" src="images/order-s-step1.svg">
+                <div class="row myrow">
+                    <div class="col myborder">
+                        <div class="myddd">購物清單</div>
+                    </div>
+                </div>
+                <p>oops！你還沒選擇任何課程呦 : )</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

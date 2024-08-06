@@ -1,0 +1,227 @@
+﻿@charset "utf-8";
+/* IMPORT RESET */
+/* IMPORT 12 COLUMN RESPONSIVE GS */
+@import url("css/reset.css");
+@import url("css/responsive.gs.12col.css");
+@import url("css/btn_style.css");
+/*==============================
+Name: A-Lin
+Date: 2016-07-11
+Type: Layout Css
+==============================*/
+
+/*	EXAMPLE STYLES */
+/* 不改變原來樣板*/
+body {
+	font-family: sans-serif;
+	/*color: white;*/
+}
+
+header {
+	line-height: 15em;
+	text-align: center;
+	/*background: #333;*/
+}
+
+article {
+	line-height:15em;
+	text-align: center;
+	/*background: #666;*/
+}
+
+/*aside {
+	line-height: 15em;
+	text-align: center;
+	background: #999;
+}*/
+
+footer {
+	line-height:15em;
+	text-align: center;
+	/*background: #BBB;*/
+}
+
+
+/*===== 共用 ======*/
+h1,h2{
+	position:absolute;
+	left:-1000em;
+}
+ul,ol{
+	margin:0 auto;
+	list-style-type:decimal;
+	list-style-position:inside;
+}
+li{
+	display:block;
+	font-size:1.25em;
+}
+li a{
+	width:100%;
+	line-height:1.325em;
+	float:left;
+	text-decoration:none;
+}
+p{line-height:1.2em;}
+/*---反白色差--------------*/
+::selection {
+	background:#708090;
+	color: #EEE;
+}
+::-moz-selection {
+	background:#708090;
+	color: #EEE;
+}
+
+/**/
+
+/*============= HEADER ==============*/
+header, main, footer{width:100%;}
+.headerWrap{
+		line-height:0em;
+		overflow:hidden;
+		/*background:url(images/2016071100.jpg) 0 32px no-repeat;*/
+		background-size: cover;
+}
+.hdimgWrap, nav{
+	padding:2%;
+	text-align:center;
+}
+.hdimgWrap{display:block; margin:0 auto;}
+.hdTitle{text-align:center; padding:2% 0; line-height:1.5em; font:normal bold 2.25em Arial, Helvetica, sans-serif, "微軟正黑體"; color:#999;}
+.hdTitleNotLogo{text-align:center; padding:2% 0; line-height:1.5em; font:normal bold 2.25em Arial, Helvetica, sans-serif, "微軟正黑體"; color:#999;}
+
+
+/*============= MAIN ==============*/
+/**/
+.formWrap{
+	line-height:2em;
+	background:rgba(0,0,0,.075);
+	padding:3% 0;
+}
+.orderForm{
+	font-size:1em;
+	font-family:Arial, Helvetica, sans-serif, "微軟正黑體";
+	margin:0 auto;
+	text-align:left;
+}
+
+
+/*重定義*/
+.orderForm label {padding:0 2%;}
+.orderForm label,.orderForm input{color:#333;}
+.orderForm input,.orderForm input, .orderForm optgroup,.orderForm  select, .orderForm textarea{margin:0 0 0 2.5%; padding: .2em .6em; background:#FFF;}
+.orderForm .pure-checkbox{cursor:pointer;}
+.pure-form fieldset.orderCour{border-bottom:1px ridge #CCC; margin-bottom:2%;}
+
+.xs-input{float:left;width:12%; }
+.orderForm .pure-form legend{ text-align:center; color:#FFF; background:#111;}
+.orderForm p{font-size:1em;}
+.orderForm p.formInfo{color:#666;font-size:15px; padding:2%; text-align:left;}
+
+.orderForm img{vertical-align:middle;}
+.checkRule{width:100%; text-align:left;}
+
+.apply .btn-order{display:block; margin:0 auto; width:60%; text-decoration:none;}
+
+/*課程繳費資訊*/
+.payTitle{line-height:0em; text-align:center;border-top:2px solid #DDD;}
+.payTitle h3{
+	font:normal normal 1.25em/2em Arial, Helvetica, sans-serif, "微軟正黑體";
+}
+.payWrap{
+	line-height:0em;
+	margin:0 auto;
+	background-repeat:no-repeat;
+}
+.payImg-ibon{
+	padding:5% 5% 320px 5%;
+	background-image:url(images/pay-ibon.png);
+	background-position:center bottom;
+	background-size:300px 270px;
+}
+.payImg-fami{
+	padding:5% 5% 320px 5%;
+	background-image:url(images/pay-famiport.jpg);
+	background-position:center bottom;
+	background-size:300px 275px;
+}
+/**/
+.payNum{color:#6B9620; font-size:2em; line-height:0em;}
+.payNum strong{ display:inline-block; margin:0 auto; border:2px ridge #6B9620; background:#FFF; padding:1% 2.5%; margin-bottom:3.25%;-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;}
+
+.payinfo{text-align:left; color:#222; padding:2%; font-family:Arial, Helvetica, sans-serif, "微軟正黑體"; line-height:0em;}
+.payinfo p{ font-size:1em; color:#cb6900; line-height:1.5em; margin-bottom:15px;}
+.payinfo p b{display:inline; padding:2px 5px; border:1px solid #cb6900; margin:0 3px;}
+.payinfo i{
+	display:inline-block;
+	width:32px;
+	height:32px;
+	vertical-align: text-bottom;
+}
+i.notice{
+	background:url(images/icon-notice.png);
+	background-size:32px 32px;
+}
+
+/*============= FOOTER ==============*/
+.footWrap{
+	color:#FFF;
+	padding:2% 0 3.5% 0;
+	font-size:13px;
+	background:#7589c8/*#FFDBDB*/;
+	line-height:2.25em;
+	background:#0169CB;
+}
+.footWrap a,.footWrap a:visited{color:#FC9;}
+.footWrap a:hover,.footWrap a:active{color:#FC0;}
+.footWrap span{display:block;}
+
+@media ( min-width : 480px ) {
+	.xs-input{float:none;}
+	.apply .btn-order{width:35%;}
+	/*====*/
+	.footWrap span{display:inline;}
+}
+
+@media ( min-width : 480px ) {
+	.xs-input{float:none;}
+	.apply button.btn{width:35%;}
+	/*====*/
+	.footWrap span{display:inline;}
+}
+
+@media ( min-width : 768px ) {
+	.hdimgWrap{margin:0; text-align:right; }
+    .hdTitle{text-align:left;}
+	.orderForm label {
+    padding:0.725% 2%;
+}
+	.orderForm p.formInfo{text-align:center;}
+	/**/
+	.payNum strong{margin-bottom:1.075%;padding:10px 20px;}
+	.payinfo{text-align:center;}
+}
+@media ( min-width : 1024px ) {
+	.orderForm{max-width:1000px; margin:0 auto;}
+	.payinfo p{background:rgba(255,255,255,.8);-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;}
+	.payImg-ibon,.payImg-fami{
+	padding:5% 5% 20% 5%;
+	background-position:right bottom;
+}
+}
+@media ( min-width : 1280px ) {
+	.payinfo p{background:none;}
+	.payImg-ibon{
+		padding:5% 5% 8% 5%;
+		background-size:400px 358px;
+	}
+	.payImg-fami{
+		padding:5% 5% 8% 5%;
+		background-size:350px 320px;
+	}
+}

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>填寫購買資料|行動學習網</title>
+    <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- 引用icon當作文字變色 放大縮小 -->
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.twzipcode.min.js"></script>
+    <script>
+        $(function () {
+            $('#twzipcode').twzipcode();
+        });
+    </script>
+    <style>
+        @media (min-width:1500px) {
+            .aa .classify {/* 課程首頁name */
+                width: 9rem;
+            }
+            .aa .class {/* 班別name */
+                font-size: 16px;
+            }
+            .aa .lesson {/* 課程名稱 */
+                width: 30rem !important;
+            }
+            .aa .teacher {/* 師資 */
+                width: 8rem
+            }
+            .aa .allclasscutoff {/* 總堂數+觀看期限 */
+                width: 9rem;
+                font-size: 15px;
+            }
+            .aa .price {/* 原價 */
+                width: 9rem;
+            }
+            .aa .safe {/* 折價 */
+                width: 10rem;
+            }
+        }
+
+        @media (min-width:1200px) and (max-width:1499px) {
+            .aa .classify {/* 課程首頁name */
+                width: 8rem;
+            }
+            .aa .class {/* 班別name */
+                font-size: 16px;
+            }
+            .aa .lesson {/* 課程名稱 */
+                width: 16rem;
+            }
+            .aa .teacher {/* 師資 */
+                width: 6.5rem
+            }
+            .aa .allclasscutoff {/* 總堂數+觀看期限 */
+                width: 7.5rem;
+                font-size: 15px;
+            }
+            .aa .price {/* 原價 */
+                width: 7.5rem;
+            }
+            .aa .safe {/* 折價 */
+                width: 8.5rem;
+            }
+            .aaa .aa .safe {
+                font-size: 24px;
+            }
+            .fs14px { /* for條列樣式icon title */
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width:992px) and (max-width:1199px) {
+            .aa .classify { /* 課程首頁name */
+                width: 6rem;
+            }
+            .aa .class { /* 班別name */
+                font-size: 16px;
+            }
+            .aa .lesson { /* 課程名稱 */
+                width: 12rem;
+            }
+            .aa .teacher { /* 師資 */
+                width: 5rem
+            }
+            .aa .allclasscutoff { /* 總堂數+觀看期限 */
+                width: 7rem;
+                font-size: 15px;
+            }
+            .aa .price { /* 原價 */
+                width: 6rem;
+            }
+            .aa .safe { /* 折價 */
+                width: 6.5rem;
+            }
+            .aaa .aa .safe {
+                font-size: 24px;
+            }
+            .fs14px { /* for條列樣式icon title */
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid d-none d-md-block" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-l.jpg">
+        </div>
+        <div class="container-fluid d-md-none" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-s.jpg">
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid" style="background-color: #EEF6F9;">
+            <div class="container" style="background-color: #FFF;">
+                <img class="img-fluid d-none d-xl-inline-block" src="images/order-l-step2.svg">
+                <img class="img-fluid d-none d-sm-inline-block d-xl-none" src="images/order-step2.svg">
+                <img class="img-fluid d-sm-none" src="images/order-s-step2.svg">
+                <div class="row myrow">
+                    <div class="col myborder">
+                        <div class="myddd">購物清單</div>
+                    </div>
+                </div>
+                <div class="row myrow">
+                    <!-- 條列排列 lg以上顯示(電腦) -->
+                    <div class="col-12 bbb d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">所屬類別<br><span class="class">班別</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">課程名稱</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">師資</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">總堂數<br>觀看期限</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">原價</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe">優惠價</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">課程<br>介紹</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">試聽</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">數量</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">高普考<br><span class="class">高考 / 三等</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa">
+                                <div class="">1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">國中<br><span class="class">國一下學期</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" style="text-decoration: double line-through 2px;" id="bgb">NT$6,000
+                                </div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa">
+                                <div class="">
+                                    <select class="btn" disabled>
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row calculation">
+                            <span class="safe1">限時特價 NT$2,999/月</span>　　
+                            <span class="subtotal">單筆小計 NT$5,998</span>
+                        </div>
+                    </div>
+                    <!-- 條列排列 lg以下顯示(手機 平板) -->
+                    <div class="row smallrrow d-lg-none">
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">國中</div>
+                                    <div>
+                                        <div class="twicecclass">國一下學期</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r">
+                                    <a href="">王捷英文(Michelle老師)(南版)</a><br>
+                                    <span class="slh">總堂數 16 堂&nbsp;&nbsp;&nbsp;<a href="">Michelle</a></span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <div>
+                                            <select class="btn" disabled>
+                                                <option>1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">類科首頁名稱</div>
+                                    <div>
+                                        <div class="twicecclass">班別</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r"><a href="">課程名稱</a><br><span
+                                        class="slh">總堂數&nbsp;&nbsp;&nbsp;<a href="">師資</a></span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <div>
+                                            <select class="btn" disabled>
+                                                <option>1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">類科首頁名稱超過?</div>
+                                    <div>
+                                        <div class="twicecclass">班別如果超過5個字會怎樣顯示呢</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r">
+                                    課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱<br><span
+                                        class="slh">總堂數&nbsp;&nbsp;&nbsp;師資</span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <div>
+                                            <select class="btn" disabled>
+                                                <option>1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                                <div class="row calculation">
+                                    <span class="safe1">限時特價 NT$2,999/月</span>　　
+                                    <span class="subtotal">單筆小計 NT$5,998</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 填寫報名資料 -->
+                    <div class="card cardstyle">
+                        <div class="card-header"><i class="fa fa-cog fa-spin fa-fw"></i>填寫報名資料<span
+                                class="myhdsp">(*必填)</span>
+                            <!--<i class="fa fa-id-card-o"></i> &f2c3;-->
+                            <div class="float-right">請填妥詳細資料</div>
+                        </div>
+                        <div class="card-body hd ft cardmain">
+                            <div class="cardmain">
+                                <div class="input-group mb-3 mmm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">會員帳號<span class="rred">*</span></span>
+                                    </div>
+                                    <input type="text" class="form-control"
+                                        placeholder="請輸入您的帳號。尚未註冊會員請輸入您的手機號碼或email做為帳號(登入上課使用)，請填寫正確，將會收到密碼資料" required>
+                                    <div class="pspps">※請輸入您的帳號。尚未註冊會員請輸入您的手機號碼或email做為帳號(登入上課使用)，請填寫正確，將會收到密碼資料</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">連絡電話<span class="rred">*</span></span>
+                                            </div>
+                                            <input type="tel" class="form-control" placeholder="僅提供貨運寄送聯繫、客服聯絡"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">email</span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="收到購課、開課通知、專屬相關優惠活動">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">學生姓名<span class="rred">*</span></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="請輸入真實姓名" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">性別</span>
+                                            </div>
+                                            <div class="form-control d-flex" style="justify-content: space-evenly;">
+                                                <div><input type="radio" name="gender" id="male"><label
+                                                        for="male">男性</label></div>
+                                                <div><input type="radio" name="gender" id="female"><label
+                                                        for="female">女性</label></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">出生日期</span>
+                                            </div>
+                                            <input type="date" id="time" class="form-control">
+
+                                        </div>
+                                        <script>
+                                            var date = new Date();
+                                            var year = date.getFullYear();
+                                            var month = ('0' + (date.getMonth() + 1)).slice(-2);
+                                            var day = ('0' + date.getDate()).slice(-2);
+
+                                            var time = year + '-' + month + '-' + day;
+                                            console.log(time);
+                                            // document.getElementById('time').value = time;  //顯示預設值為今日
+
+                                            document.getElementById('time').setAttribute('max', time); //限制不能選擇今天之後的日期(加上屬性max)
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3" id="twzipcode">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">寄送地址<span class="rred">*</span></span>
+                                    </div>
+                                    <div data-role="zipcode" data-name="zipcode" data-value=""
+                                        data-style="form-control twzipcode"></div>
+                                    <div data-role="county" data-name="county[]" data-value=""
+                                        data-style="form-control twzipcode"></div>
+                                    <div data-role="district" data-name="district[]" data-value=""
+                                        data-style="form-control twzipcode"></div>
+                                    <input type="text" class="form-control" aria-label="Text input with dropdown button"
+                                        placeholder="講義於繳費後3~7個工作天寄出，進度課程依進度寄送。（海外郵資另計）">
+                                    <div class="pspps">※講義於繳費後3~7個工作天寄出，進度課程依進度寄送。（海外郵資另計）</div>
+                                </div>
+                                <script>
+                                    $(function () {
+                                        $('.bill3,.noname').css('display', 'none');
+                                        $('.this2').css('border-radius', '0 .25rem .25rem 0')
+                                    });
+                                    function showbill1(values) {
+                                        if (values == 0) {
+                                            $('.bill3,.noname').css('display', 'none')
+                                            $('.bill2').css("display", 'flex')
+                                            $('.bbill').css({ 'flex-flow': 'row wrap', 'display': 'block' })
+                                        } else if (values == 1) {
+                                            $('.bill2,.noname').css("display", 'none')
+                                            $('.bill3').css("display", 'flex')
+                                            $('.bbill').css({ 'flex-flow': 'column wrap', 'display': 'block' })
+                                        }
+                                    }
+                                    function showbill2(values) {
+                                        if (values == 6) {
+                                            $('.noname').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                            $('.bbill').css({ 'flex-flow': 'column wrap', 'display': 'block' })
+                                            $('.this2').css('border-radius', '0')
+                                            $('.noname').attr('placeholder', "請輸入手機載具條碼");
+                                        } else if (values == 7) {
+                                            $('.noname').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                            $('.bbill').css({ 'flex-flow': 'column wrap', 'display': 'block' })
+                                            $('.this2').css('border-radius', '0')
+                                            $('.noname').attr('placeholder', "請輸入自然人憑證");
+                                        } else if (values == 10) {
+                                            $('.noname').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                            $('.bbill').css({ 'flex-flow': 'column wrap', 'display': 'block' })
+                                            $('.this2').css('border-radius', '0')
+                                            $('.noname').attr('placeholder', "請輸入悠遊卡隱碼");
+                                        } else if (values == 11) {
+                                            $('.this2').css('border-radius', '0 .25rem .25rem 0')
+                                            $('.bbill').css({ 'flex-flow': 'row wrap', 'display': 'block' })
+                                            $('.bill3,.noname').css('display', 'none')
+                                        }
+                                    }
+                                </script>
+                                <div class="input-group mb-3" id="bill">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text norred">發票資訊</span>
+                                    </div>
+
+                                    <div class="form-control d-flex bbill">
+                                        <div><input type="radio" name="bill" value="0" id="two" checked
+                                                onclick="showbill1(value)"><label for="two">二聯式發票</label></div>
+                                        <div><input type="radio" name="bill" value="1" id="three"
+                                                onclick="showbill1(value)"><label for="three">三聯式發票</label></div>
+                                    </div>
+                                    <div class="input-group-prepend bill2">
+                                        <div class="input-group-text" style="border-right: none;">發票載具</div>
+                                    </div>
+
+                                    <select class="form-control bill2 this2"
+                                        onchange="showbill2(this[selectedIndex].value)">
+                                        <option value="11" selected>請選擇</option>
+                                        <option value="6">手機條碼</option>
+                                        <option value="7">自然人憑證</option>
+                                        <option value="10">悠遊卡</option>
+                                    </select>
+                                    <input type="text" class="form-control noname">
+                                    <div class="input-group-prepend bill3">
+                                        <div class="input-group-text">統一編號</div>
+                                    </div>
+                                    <input type="text" class="form-control bill3">
+                                    <div class="input-group-prepend bill3">
+                                        <div class="input-group-text">公司名稱<br class="d-none d-md-block">(抬頭)</div>
+                                    </div>
+                                    <input type="text" class="form-control bill3 this1">
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-4">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text norred">消息來源</span>
+                                            </div>
+                                            <select class="form-control">
+                                                <option disabled selected>請選擇</option> <!-- 示意 -->
+                                                <option>預設(活動頁)</option>
+                                                <option>Yahoo搜尋</option>
+                                                <option>Google搜尋</option>
+                                                <option>Facebook</option>
+                                                <option>Instagram</option>
+                                                <option>LINE</option>
+                                                <option>YouTube</option>
+                                                <option>奇摩知識+</option>
+                                                <option>批踢踢PTT</option>
+                                                <option>論壇、討論區</option>
+                                                <option>部落格</option>
+                                                <option>電視／網路新聞</option>
+                                                <option>傳單DM</option>
+                                                <option>電子報</option>
+                                                <option>戶外看板</option>
+                                                <option>校園講座說明會</option>
+                                                <option>補習班介紹</option>
+                                                <option>老師介紹</option>
+                                                <option>親友介紹</option>
+                                                <option>王捷老師</option>
+                                                <option>Akira老師</option>
+                                                <option>韋婕老師</option>
+                                                <option>LINE廣告</option>
+                                                <option>部落客推薦</option>
+                                                <option>我是舊生</option>
+                                                <option>其它</option>
+                                                <option>後台</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $(function () {
+                                            $('.form-control.this').css('border-radius', '0 .25rem .25rem 0')
+                                        });
+                                        function showinfo(values) {
+                                            if (values == 2) {
+                                                $('.other').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                                $('.cram,.teach').css('display', 'none');
+                                                $('.form-control.this').css('border-radius', '0');
+                                            } else if (values == 3) {
+                                                $('.cram').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                                $('.other,.teach').css('display', 'none');
+                                                $('.form-control.this').css('border-radius', '0')
+                                            } else if (values == 4) {
+                                                $('.teach').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                                $('.other,.cram').css('display', 'none');
+                                                $('.form-control.this').css('border-radius', '0')
+                                            } else {
+                                                $('.cram,.other,.teach').css('display', 'none');
+                                                $('.form-control.this').css('border-radius', '0 .25rem .25rem 0')
+                                            }
+                                        }
+                                        function sshowinfo(values) {
+                                            if (values == 5) {
+                                                $('.cram.other.oother').css({ "display": 'block', 'border-radius': '0 .25rem .25rem 0' });
+                                                $('.other.nobr,.teach.nobr,.cram.nobr').css('border-radius', '0');
+                                            } else {
+                                                $('.oother').css('display', 'none');
+                                                $('.teach.nobr,.cram.nobr').css('border-radius', '0 .25rem .25rem 0');
+                                            }
+                                        }
+                                    </script>
+                                    <div class="col-12 col-md-8">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">推薦人</span> <!-- 示意 -->
+                                            </div>
+                                            <select class="form-control this"
+                                                onchange="showinfo(this[selectedIndex].value)">
+                                                <option value="0" selected>無</option>
+                                                <option value="2">夥伴經銷商</option>
+                                                <option value="2">舊生介紹</option>
+                                                <option value="2">樂翻轉雲端學院</option>
+                                                <option value="3">補習班介紹</option>
+                                                <option value="4">老師介紹</option>
+                                            </select>
+                                            <input type="text" class="form-control other nobr" placeholder="請輸入介紹人">
+                                            <select class="form-control cram nobr"
+                                                onchange="sshowinfo(this[selectedIndex].value)">
+                                                <option selected>請選擇</option>
+                                                <option>高雄成功</option>
+                                                <option>易學通聯盟</option>
+                                                <option>崇耀國際</option>
+                                                <option>知識海洋</option>
+                                                <option value="5">其它</option>
+                                            </select>
+                                            <select class="form-control teach nobr"
+                                                onchange="sshowinfo(this[selectedIndex].value)">
+                                                <option selected>請選擇</option>
+                                                <option>林廷老師</option>
+                                                <option>王捷老師</option>
+                                                <option>林程老師</option>
+                                                <option>柯恩老師</option>
+                                                <option>翁鴻老師</option>
+                                                <option>李德治老師</option>
+                                                <option>瑪格瑞老師</option>
+                                                <option>Akira老師</option>
+                                                <option value="5">其它</option>
+                                            </select>
+                                            <input type="text" class="form-control cram other oother">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text norred">其他備註</span>
+                                    </div>
+                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服務條款<span class="rred">*</span></span>
+                                    </div>
+                                    <div class="form-control d-flex align-content-center">
+                                        <input type="checkbox" name="" id="check">
+                                        <label for="check">已詳細閱讀並接受 <a href="#" target="_blank">個資保護聲明</a> 和 <a href="#"
+                                                target="_blank">會員服務條款</a></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(function () {
+                            $('.col-12.union,.col-12.transfer').css("display", 'none')
+                        });
+                        function mypay(values) {
+                            if (values == 8) {
+                                $('.col-12.union').css("display", 'block')
+                                $('.col-12.transfer').css("display", 'none')
+                            } else if (values == 9) {
+                                $('.col-12.union').css("display", 'none')
+                                $('.col-12.transfer').css("display", 'block')
+                            } else {
+                                $('.col-12.union,.col-12.transfer').css("display", 'none')
+                            }
+                        };
+                    </script>
+                    <!-- 付款方式 -->
+                    <div class="card cardstyle">
+                        <div class="card-header"><i class="fa fa-credit-card fa-fw"></i>付款方式</div>
+                        <div class="card-body hd ft">
+                            <div class="row pay d-flex">
+                                <div class="col-12 col-sm-6" id="myyorder1">
+                                    <input type="radio" name="pay" id="ibon" onchange="mypay(value)">
+                                    <label for="ibon">統一超商 7-11 ibon繳費</label>
+                                </div>
+                                <div class="col-12 col-sm-6" id="myyorder3">
+                                    <input type="radio" value="8" name="pay" id="union" onchange="mypay(value)">
+                                    <label for="union">線上刷卡<span
+                                            style="font-size: 16px;color: #808080;">(紅陽科技金流系統代收)</span></label>
+                                </div>
+                                <div class="col-12 union" id="myyorder4">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">持卡人非本人時，請填持卡人姓名</span>
+                                        </div>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6" id="myyorder2">
+                                    <input type="radio" name="pay" id="fami" onchange="mypay(value)">
+                                    <label for="fami">全家便利商店 FamiPort 繳費</label>
+                                </div>
+                                <div class="col-12 col-sm-6" id="myyorder5">
+                                    <input type="radio" name="pay" id="staging" onchange="mypay(value)">
+                                    <label for="staging">分期付款6期0利率<span style="font-size: 16px;color: #808080;">(
+                                            限6000以上，24小時內將<span style="color: #F7931E;">以簡訊通知</span>。 )</span></label>
+                                </div>
+                                <div class="col-12 col-sm-6" id="myyorder6">
+                                    <input type="radio" name="pay" id="webatm" onchange="mypay(value)">
+                                    <label for="webatm">WebATM轉帳</label>
+                                </div>
+                                <div class="col-12 col-sm-6" id="myyorder7">
+                                    <input type="radio" value="9" name="pay" id="transfer" onchange="mypay(value)">
+                                    <label for="transfer">匯款或ATM轉帳</label>
+                                </div>
+                                <div class="col-12 transfer" id="myyorder8">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 d-flex">
+                                            <div style="text-align: right;color: #666;padding-right: .5rem;">
+                                                銀行名稱<br>銀行代碼<br>轉帳帳號<br>戶名</div>
+                                            <div style="color: #F7931E;">
+                                                玉山銀行東台南分行<br>808<br>0761-9400-0923-6<br>行動學習科技股份有限公司</div>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">匯款姓名<span
+                                                            class="rred">*</span></span>
+                                                </div>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">帳號後五碼<span
+                                                            class="rred">*</span></span>
+                                                </div>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- 結帳總金額 -->
+                    <div class="card cardstyle total">
+                        <div class="card-header"><i class="fa fa-calculator fa-fw"></i>結帳總金額
+                            <div class="float-right">已選擇２個課程</div>
+                        </div>
+                        <div class="card-body hd">課程小計
+                            <div class="float-right">１１９９８元</div>
+                        </div>
+                        <div class="card-body">活動折價
+                            <div class="float-right">０元</div>
+                        </div>
+                        <div class="card-body">序號折價
+                            <div class="float-right">－２００元</div>
+                        </div>
+                        <div class="card-body ft">總計
+                            <div class="float-right">１１７９８元</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center">
+                    <div class="col-12 col-sm-10 col-md-6 btn-group btn-group-lg w-100">
+                        <button type="" class="btn btn-primary mybtn bgw"><i class="fa fa-reply"></i> 返回購物清單</button>
+                        <button type="" class="btn btn-primary mybtn"><i class="fa fa-shopping-cart"></i> 前往付款</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

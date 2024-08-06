@@ -1,0 +1,509 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.btnqa span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btnqa span:after {
+    content: '\00bb';
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0;
+    top: -.5rem;
+    right: -20px;
+    transition: 0.5s;
+}
+.btnqa:hover span {
+    padding-right: 25px;
+}
+.btnqa:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.btnqa .btnqaicon{
+    position: relative;
+    top: -3px;
+}
+.btnqa:hover{
+    background-color: #4AA9FF;
+    color: #FFF;
+}
+.btnqa{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 4px; 
+    color: #FFF;
+    background-color: #0071BC;
+    margin: .5rem;
+}
+.categoryall .category i{
+    font-size: 1.75rem;
+}
+.categoryall .category{
+    border-bottom: #4AA9FF solid 1px;
+    box-sizing: border-box;
+    font-weight:600;
+    font-size: 1.5rem;
+    padding: .75rem 0px -0px 1.5rem;
+    color: #4AA9FF;
+    transition: ease .3s;
+}
+.categoryall{
+    margin:0px .25rem;
+}
+.identity{
+    margin-top: .5rem;
+    padding: 0px 1rem;
+}
+.identity .col{
+    padding: 0px;
+    margin: 0px;
+}
+.identity .col label{
+    display: inline-block;
+    width: 100%;
+    /* margin-bottom: 0px; */
+    margin: 0.5rem;
+
+}
+.identity .col label div.btn{
+    width: calc(100% - 1rem);
+    color: #FFF;
+    display:inline-block;
+    font-size: 1.5rem;
+}
+.identity .col label div.btn.Not{
+    background-color: #FBB03B;
+    transition: ease .3s;
+}
+.identity .col label div.btn.Not:hover{
+    background-color: #F7931E;
+}
+.identity .col label div.btn.Yes{
+    background-color: #4AA9FF;
+    transition: ease .3s;
+}
+.identity .col label div.btn.Yes:hover{
+    background-color: #007BFF;
+}
+.identity .col label div.btn input{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding:.5rem;
+    position: relative;
+    top: .25rem;
+    
+}
+.login{
+    margin: 0px;
+}
+.login .col-12.col-md-4{
+    padding: .5rem;
+}
+.form-control.btncolor:hover{
+    background-color: #007BFF;
+}
+.form-control.btncolor:focus {
+    color: #FFF;
+    background-color: #4AA9FF;
+}
+.form-control.btncolor{
+    background-color: #4AA9FF;
+    border: solid 1px #4AA9FF;
+    color: #FFF;
+    transition:background-color ease .3s;
+}
+.form-control:focus,
+.form-control{
+    color: #007BFF;
+}
+.custom-file-input:lang(zh) ~ .custom-file-label::after ,
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    /* content: "選擇檔案"; */
+    background-color: #CCE9FF;
+    color: #007BFF;
+    padding: .5rem 1rem;
+    height: calc(3rem - 2px);
+}
+
+.custom-file-label,
+.custom-file-input:disabled ~ .custom-file-label {
+    color: #6c757d;
+    height: 3rem;
+    line-height: 2.125rem;
+}
+label {
+    margin-bottom: 0px;
+}
+
+.custom-file,
+.custom-file-input{
+    font-size: 1.25rem;
+    /* opacity: ; */
+}
+.question-type{
+    border-radius: .25rem .25rem 0px 0px;
+    border: solid 1px #ced4da;
+    background-color: #CCE9FF;
+    color: #007BFF;
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.question-list:focus{
+    /* color: #495057; */
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.question-list{
+    padding: .5rem 1rem;
+    border: solid 1px #ced4da;
+    border-radius: 0px 0px .25rem .25rem;
+    position: relative;
+    top:-1px;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #4AA9FF;
+}
+.question-list input{
+    width: 1.125rem;
+    height: 1.125rem;
+    position: relative;
+    top: 1px;
+}
+
+.input-group-text{
+    background-color: #CCE9FF;
+    border: 1px solid #ced4da;
+    color: #007BFF;
+}
+.information{
+    padding: 0px .5rem;
+}
+.information .col-12.col-md-6{
+    padding: 0px .5rem;
+}
+.memo div.logged p{
+    color: #4AA9FF;
+}
+.memo div.logged p span{
+    color: #F7931E;
+}
+.memo div.logged{
+    background-color: #F4F4F4;
+    margin: 1rem;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+}
+.memo div p{
+    font-size: 1.25rem;
+    margin-bottom: 0px;
+}
+.memo div p.ps{
+    display: inline-block;
+    text-align: left;
+    color: #F00;
+}
+.col-12.col-md-6>ol{
+    padding: 0px 1rem;
+}
+ul>li {
+    list-style-position: outside;
+    /* overflow-wrap:break-word; */
+    /* word-break: break-word; */
+    word-break: break-all;
+    overflow-wrap: break-all;
+}
+#myshow1{
+    order: 1;
+}
+#myshow2{
+    order: 2;
+}
+#myshow3{
+    order: 4;
+}
+#myshow4{
+    order: 3;
+}
+#myshow4 .input-group{
+    margin-bottom: 1.25rem;
+}
+.input-group-text.form-controlimg img{
+    height:2.875rem;
+    display:inline-block;
+}
+#myshow4 p{
+    color: #007BFF;
+    font-size: 1.5rem;
+    margin-bottom: .25rem;
+}
+#myshow4 ol>li{
+    color: #4AA9FF;
+    font-size: 1.25rem;
+}
+.mybtn{
+    background-color: #4AA9FF;
+    color: #FFF;
+}
+.mybtn:hover{
+    background-color: #007BFF;
+    color: #FFF;
+}
+@media (max-width: 991px) and (min-width: 768px) { /* md */
+    
+    .custom-file-input:lang(zh) ~ .custom-file-label::after ,
+    .custom-file-input:lang(en) ~ .custom-file-label::after{
+        padding: .35rem .65rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5;
+        height: calc(2.375rem - 2px);
+    }
+
+    .custom-file-label,
+    .custom-file-input:disabled ~ .custom-file-label {
+        color: #6c757d;
+        height: 2.375rem;
+        line-height: 2rem;
+    }
+    label {
+        margin-bottom: 0px;
+    }
+    .custom-file,
+    .custom-file-input{
+        font-size: 1rem;
+    }
+    .memo div p.ps,
+    .memo div.logged p{
+        font-size: 1rem;
+    }
+    .input-group-text{
+        height: calc(2.5rem - 2px);
+    }
+    .input-group-lg>.custom-select, .input-group-lg>.form-control:not(textarea) {
+        height: calc(1.5em + 1rem - 2px);
+    }
+    .input-group-text.form-controlimg{
+        padding: 0px !important;
+    }
+    .input-group-text.form-controlimg img{
+        height:36px;
+        display:inline-block;
+    }
+    .form-control{
+        padding: .15rem .65rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5;
+        height:1rem;
+    }
+    .input-group-text,
+    .question-type{
+        padding: .35rem .65rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+    .question-list{
+        padding: .5rem .65rem;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .question-list input{
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+        top: 2px;
+    }
+    #myshow4 p{
+        font-size: 1.25rem;
+    }
+    #myshow4 ol>li{
+        font-size: 1rem;
+    }
+    .identity .col label div.btn{
+        font-size: 1.125rem;
+    }
+    .identity .col label div.btn input {
+        width: 1.125rem;
+        height: 1.125rem;
+        position: relative;
+        top: 2px;
+    }
+    .login .col-12.col-md-4 {
+        padding: .5rem 0px;
+    }
+    .identity .col label {
+        display: inline-block;
+        width: 100%;
+        margin: 0.5rem 0px;
+    }
+    .identity {
+        padding: 0px 0px 0px 1rem;
+    }
+    .btn-lg, .btn-group-lg > .btn {
+        padding: 0.375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.25;
+        border-radius: 0.3rem;
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) { /* sm */
+    .container-fluid{
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    #myshow1{
+        order: 1;
+    }
+    #myshow2{
+        order: 2;
+    }
+    #myshow3{
+        order: 3;
+    }
+    #myshow4{
+        order: 4;
+    }
+    #myshow4 ol>li{
+        word-break: break-all;
+    }
+}
+@media (max-width: 575px){/* xs */
+    .container-fluid{
+        padding-left: 0px;
+        padding-right: 0px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    .container{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .btnqa{
+        width: calc(100% - 2rem);
+    }
+    #myshow1{
+        order: 1;
+    }
+    #myshow2{
+        order: 2;
+    }
+    #myshow3{
+        order: 3;
+    }
+    #myshow4{
+        order: 4;
+        word-break: break-all;
+    }
+    .identity .col label div.btn{
+        font-size: 1.25rem;
+    }
+    .identity .col label div.btn input {
+        width: 1.25rem;
+        height: 1.25rem;
+        position: relative;
+        top: 2px;
+    }
+}
+@media (max-width: 400px){
+    .btn-lg, .btn-group-lg > .btn {
+        padding: 0.375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.25;
+        border-radius: 0.3rem;
+    }
+    .custom-file-input:lang(zh) ~ .custom-file-label::after ,
+    .custom-file-input:lang(en) ~ .custom-file-label::after{
+        padding: .35rem .65rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5;
+        height: calc(2.375rem - 2px);
+    }
+
+    .custom-file-label,
+    .custom-file-input:disabled ~ .custom-file-label {
+        color: #6c757d;
+        height: 2.375rem;
+        line-height: 2rem;
+    }
+    label {
+        margin-bottom: 0px;
+    }
+    .custom-file,
+    .custom-file-input{
+        font-size: 1rem;
+    }
+    .memo div p.ps,
+    .memo div.logged p{
+        font-size: 1rem;
+    }
+    .input-group-text{
+        height: calc(2.5rem - 2px);
+    }
+    .input-group-lg>.custom-select, .input-group-lg>.form-control:not(textarea) {
+        height: calc(1.5em + 1rem - 2px);
+    }
+    .input-group-text.form-controlimg{
+        padding: 0px !important;
+    }
+    .input-group-text.form-controlimg img{
+        height:36px;
+        display:inline-block;
+    }
+    .form-control{
+        padding: .15rem .65rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5;
+        height:1rem;
+    }
+    .input-group-text,
+    .question-type{
+        padding: .35rem .65rem !important;
+        font-size: 1rem !important;
+        line-height: 1.5;
+    }
+    .question-list{
+        padding: .5rem .65rem;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .question-list input{
+        width: 1rem;
+        height: 1rem;
+        position: relative;
+        top: 2px;
+    }
+    .identity .col label div.btn{
+        font-size: 1.125rem;
+    }
+    .identity .col label div.btn input {
+        width: 1.125rem;
+        height: 1.125rem;
+        position: relative;
+        top: 2px;
+    }
+    .login .col-12.col-md-4 {
+        padding: .5rem 0px;
+    }
+    .identity .col label {
+        display: inline-block;
+        width: 100%;
+        margin: 0.5rem 0px;
+    }
+    .identity {
+        padding: 0px 0px 0px 1rem;
+    }
+    #myshow4 p{
+        font-size: 1.25rem;
+    }
+    #myshow4 ol>li{
+        font-size: 1rem;
+        word-break: break-all;
+    }
+}

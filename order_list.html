@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物清單|行動學習網</title>
+    <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- 引用icon當作文字變色 放大縮小 -->
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        @media (min-width:1500px) {
+            .aa .classify{ /* 課程首頁name */
+                width: 8rem;
+            }
+            .aa .class{ /* 班別name */
+                font-size: 16px;
+            }
+            .aa .lesson{ /* 課程名稱 */
+                width: 30rem !important;
+            }
+            .aa .teacher{ /* 師資 */
+                width: 8rem
+            }
+            .aa .allclasscutoff{ /* 總堂數+觀看期限 */
+                width: 8rem;
+                font-size: 15px;
+            }
+            .aa .price{ /* 原價 */
+                width: 8rem;
+            }
+            .aa .safe{ /* 折價 */
+                width: 9rem;
+            }
+        }
+        @media (min-width:1200px) and (max-width:1499px) {
+            .aa .classify{ /* 課程首頁name */
+                width: 7rem;
+            }
+            .aa .class{ /* 班別name */
+                font-size: 16px;
+            }
+            .aa .lesson{ /* 課程名稱 */
+                width: 13rem;
+            }
+            .aa .teacher{ /* 師資 */
+                width: 7rem
+            }
+            .aa .allclasscutoff{ /* 總堂數+觀看期限 */
+                width: 8rem;
+                font-size: 15px;
+            }
+            .aa .price{ /* 原價 */
+                width: 6.5rem;
+            }
+            .aa .safe{ /* 折價 */
+                width: 7rem;
+            }
+            .aaa .aa .safe{
+                font-size: 24px;
+            }
+            .fs14px{ /* for條列樣式icon title */
+                font-size: 14px;
+            }
+        }
+        @media (min-width:992px) and (max-width:1199px) {
+            .aa .classify { /* 課程首頁name */
+                width: 5.5rem;
+            }
+            .aa .class { /* 班別name */
+                font-size: 16px;
+            }
+            .aa .lesson { /* 課程名稱 */
+                width: 11rem;
+            }
+            .aa .teacher { /* 師資 */
+                width: 5rem
+            }
+            .aa .allclasscutoff { /* 總堂數+觀看期限 */
+                width: 6.5rem;
+                font-size: 15px;
+            }
+            .aa .price { /* 原價 */
+                width: 5.5rem;
+            }
+            .aa .safe { /* 折價 */
+                width: 6rem;
+            }
+            .aaa .aa .safe {
+                font-size: 24px;
+            }
+            .fs14px { /* for條列樣式icon title */
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid d-none d-md-block" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-l.jpg">
+        </div>
+        <div class="container-fluid d-md-none" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-s.jpg">
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid" style="background-color: #EEF6F9;">
+            <div class="container" style="background-color: #FFF;">
+                <img class="img-fluid d-none d-xl-inline-block" src="images/order-l-step1.svg">
+                <img class="img-fluid d-none d-sm-inline-block d-xl-none" src="images/order-step1.svg">
+                <img class="img-fluid d-sm-none" src="images/order-s-step1.svg">
+                <div class="row myrow">
+                    <div class="col myborder">
+                        <div class="myddd">購物清單</div>
+                    </div>
+                </div>
+                <div class="row myrow">
+                    <!-- 條列排列 lg以上顯示(電腦) -->
+                    <div class="col-12 bbb d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">所屬類別<br><span class="class">班別</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">課程名稱</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">師資</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">總堂數<br>觀看期限</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">原價</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe">優惠價</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">課程<br>介紹</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">試聽</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">刪除<br>添加</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="fs14px">數量</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">高普考<br><span class="class">高考 / 三等</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa">
+                                <a href="">
+                                    <i class="fa fa-times-circle"></i>
+                                </a>
+                            </div>
+                            <div class="col aa">
+                                <div class="">1</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">國中<br><span class="class">國一下學期</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" style="text-decoration: double line-through 2px;" id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <i class="fa fa-times-circle"></i>
+                                </a></div>
+                            <div class="col aa">
+                                    <div class="">
+                                        <select class="btn">
+                                            <option>1</option>
+                                            <option selected>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row calculation">
+                            <span class="safe1">限時特價 NT$2,999/月</span>　　
+                            <span class="subtotal">單筆小計 NT$5,998</span>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">所屬類別<br><span class="class">班別</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" style="text-decoration: double line-through 2px;"  id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                <i class="fa fa-times-circle"></i>
+                                </a></div>
+                            <div class="col aa">
+                                <div class="">1</div>
+                            </div>
+                        </div>
+                        <div class="row calculation">
+                            <span class="safe1">限時特價 NT$2,999</span>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">所屬類別<br><span class="class">題庫班</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                <i class="fa fa-times-circle"></i>
+                                </a></div>
+                            <div class="col aa">
+                                <div class="">
+                                    <select class="btn">
+                                        <option>1</option>
+                                        <option selected>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row calculation">
+                            <span class="subtotal">單筆小計 NT$12,000</span>
+                        </div>
+                    </div>
+                    <div class="col-12 ccc d-none d-lg-inline-block">
+                        <i class="fa fa-puzzle-piece"></i>
+                        <span>加購推薦</span>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">所屬類別<br><span class="class">班別</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" style="text-decoration: double line-through 2px;"  id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a></div>
+                            <div class="col aa">
+                                <div class="">1</div>
+                            </div>
+                        </div>
+                        <div class="row calculation">
+                            <span class="safe1">限時特價 NT$2,999</span>
+                        </div>
+                    </div>
+                    <div class="col-12 aaa d-none d-lg-inline-block">
+                        <div class="row">
+                            <div class="col aa">
+                                <div class="classify">所屬類別<br><span class="class">班別</span></div>
+                            </div>
+                            <div class="col aa">
+                                <div class="lesson">王捷英文(Michelle老師)(Michelle老師)(南版)(南版)</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="teacher">Michelle</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="allclasscutoff">堂數 16 堂<br><img class="see1"
+                                        src="images/icon-deadline.svg">繳費起6個月</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="price">NT$12,800</div>
+                            </div>
+                            <div class="col aa">
+                                <div class="safe" style="text-decoration: double line-through 2px;"  id="bgb">NT$6,000</div>
+                            </div>
+                            <div class="col aa"><a href="">
+                                    <div class="all1" alt="課程介紹" title="課程介紹"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <div class="try1" alt="試聽" title="試聽"></div>
+                                </a></div>
+                            <div class="col aa"><a href="">
+                                    <i class="fa fa-plus-circle"></i>
+                                </a></div>
+                            <div class="col aa">
+                                <div class="">
+                                    <select class="btn">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row calculation">
+                            <span class="safe1">限時特價 NT$2,999</span>
+                        </div>
+                    </div>
+                    <!-- 條列排列 lg以下顯示(手機 平板) -->
+                    <div class="row smallrrow d-lg-none">
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">國中</div>
+                                    <div>
+                                        <div class="twicecclass">國一下學期</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r">
+                                    <a href="">王捷英文(Michelle老師)(南版)</a><br>
+                                    <span class="slh">總堂數 16 堂&nbsp;&nbsp;&nbsp;<a href="">Michelle</a></span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <!-- <div>
+                                            <select class="btn">
+                                                <option>1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div> -->
+                                        <div>
+                                            <!-- class="floatr" -->
+                                            <a href=""><i class="fa fa-times-circle"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">類科首頁名稱</div>
+                                    <div>
+                                        <div class="twicecclass">班別</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r"><a href="">課程名稱</a><br><span
+                                        class="slh">總堂數&nbsp;&nbsp;&nbsp;<a href="">師資</a></span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <div>
+                                            <select class="btn" >
+                                                <option >1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <!-- class="floatr" -->
+                                            <a href=""><i class="fa fa-times-circle"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row calculation">
+                                    <span class="subtotal">單筆小計 NT$6,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">類科首頁名稱超過?</div>
+                                    <div>
+                                        <div class="twicecclass">班別如果超過5個字會怎樣顯示呢</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r">
+                                    課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱<br><span
+                                        class="slh">總堂數&nbsp;&nbsp;&nbsp;師資</span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <div>
+                                            <select class="btn">
+                                                <option>1</option>
+                                                <option selected>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <!-- class="floatr" -->
+                                            <a href=""><i class="fa fa-times-circle"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row calculation">
+                                    <span class="safe1">限時特價 NT$2,999/月</span>
+                                    <span class="subtotal">單筆小計 NT$5,998</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ccc rowrow">
+                            <i class="fa fa-puzzle-piece"></i>
+                            <span>加購推薦</span>
+                        </div>
+                        <div class="col-12 rowrow">
+                            <div class="rrowdiv">
+                                <div class="cclass">
+                                    <div class="cclassname">類科首頁名稱超過?</div>
+                                    <div>
+                                        <div class="twicecclass">班別如果超過5個字會怎樣顯示呢</div>
+                                    </div>
+                                </div>
+                                <div class="classname-r">
+                                    課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱課程名稱<br><span
+                                        class="slh">總堂數&nbsp;&nbsp;&nbsp;師資</span>
+                                </div>
+                                <div>
+                                    <div class="detel align-items-end d-flex d-inline-block"><img
+                                            src="images/icon-deadline.svg" alt="觀看期限">觀看期限&nbsp;&nbsp;&nbsp;<span
+                                            class="tdlt">原價</span>&nbsp;&nbsp;&nbsp;<span class="sssafe">優惠價</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <a href=""><i class="fa fa-play-circle"></i></a>
+                                        </div>
+                                        <div>
+                                            <select class="btn">
+                                                <option selected>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <!-- class="floatr" -->
+                                            <a href=""><i class="fa fa-plus-circle"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row calculation">
+                                    <span class="safe1">限時特價 NT$2,999</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card cardstyle">
+                        <div class="card-header">
+                            <i class="fa fa-calculator"></i>試算表
+                            <div class="float-right">已選擇２個課程</div>
+                        </div>
+                        <div class="card-body hd">課程小計
+                            <div class="float-right">２６９９７元</div>
+                        </div>
+                        <div class="card-body mysaft">
+                            <div>優惠券</div>
+                            <div class="d-inline-block">
+                                <div class="input-group"><!-- 當登入會員時是VIP身分顯示 -->
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fa fa-star"> </i>VIP課程學習券</span>
+                                    </div>
+                                    <select class="form-control text-center vip" onchange="vipDiscount(this[selectedIndex].value)">
+                                        <option value="0" selected>下次再使用</option>
+                                        <option value="1">NT.1,000</option>
+                                        <option value="2">NT.2,000</option>
+                                        <option value="3">NT.3,000</option>
+                                        <option value="4">NT.4,000</option>
+                                        <option value="5">NT.5,000</option>
+                                        <option value="6">NT.6,000</option>
+                                        <option value="7">NT.7,000</option>
+                                        <option value="8">NT.8,000</option>
+                                        <option value="9">NT.9,000</option>
+                                        <option value="10">NT.10,000</option>
+                                        <option value="0">課程抵用券已使用完畢</option><!-- 當課程抵用券時顯示,其他選項不顯示 -->
+                                    </select>
+                                </div>
+                                <script>
+                                    $(function () {
+                                        $('span.codeDiscount').css( 'display', 'block');
+                                        $('.vipDiscount').css('display','none');
+                                    });
+                                    function vipDiscount(values) {
+                                        if (values == 0) {
+                                            $('.vipDiscount').css('display','none');
+                                            $('.codeDiscount').css( 'display', 'flex');
+                                            $('span.codeDiscount').css( 'display', 'block');
+                                        } else {
+                                            $('.vipDiscount').css('display','block');
+                                            $('.codeDiscount').css('display', 'none');
+                                        }
+                                    }
+                                </script>
+                                <div class="input-group"><!-- 當登入會員是VIP身分且為當月壽星時顯示 -->
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fa fa-birthday-cake" aria-hidden="true"></i>使用VIP生日禮500元</span>
+                                    </div>
+                                    <span class="form-control text-center" style="font-size: 1.25rem;"><input style="width:1.25rem;height: 1.25rem;" type="radio" name="birthday" id="yes"><label style="margin: 0;" for="yes">是</label>　<input style="width:1.25rem;height: 1.25rem;" type="radio" name="birthday" id="no"><label style="margin: 0;" for="no">否</label></span>
+                                </div>
+                                <div class="input-group codeDiscount">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fa fa-ticket"></i> 優惠代碼</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="若無優惠代碼，無需填寫" required>
+                                    <div class="input-group-append">
+                                        <button class="input-group-text" href="#" >驗證</button>
+                                      </div>
+                                </div>
+                                <span class="codeDiscount">※優惠代碼只能擇一填寫，請選擇對您最有利的代碼填入</span>
+                                <span class="vipDiscount">※VIP會員課程學習券不與其它優惠活動併用</span>
+                            </div>
+                            <div class="float-right">０元</div>
+                        </div>
+                        <div class="card-body ybody">
+                            <div><i class="fa fa-gift"></i>贈品</div>
+                            <div class="d-inline-block">住宿抵用券壹仟元*1<br>口罩收納夾*1<br>以此類推...</div>
+                            <div class="float-right">０元</div>
+                        </div>
+                        <div class="card-body">運費
+                            <div class="float-right">０元</div>
+                        </div>
+                        <div class="card-body ft">總計
+                            <div class="float-right">２６９９７元</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center">
+                    <div class="col-12 col-sm-6 btn-group btn-group-lg w-100">
+                        <button type="submit" class="btn btn-primary mybtn"><i class="fa fa-shopping-cart"></i> 我要結帳</button>
+                        <!-- <button type="reset" class="btn btn-primary">重新填寫</button> -->
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

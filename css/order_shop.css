@@ -1,0 +1,157 @@
+.mytext{
+    margin: 3rem 2rem;
+}
+.card{
+    margin: 1rem;
+    border: none;
+    border-radius: .3rem;
+    background-color: #FFFBEB;
+    padding: 1.25rem;
+    width: fit-content;
+    color: #083863;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+}
+p span.cb{
+    color: #007BFF;
+}
+.h2 .code{
+    background-color: #4AA9FF;
+    color: #FFF;
+    border-radius: .5rem;
+    padding: .125rem 3rem;
+    display: inline-block;
+    margin: .5rem .75rem;
+}
+ol{
+    margin-bottom: 0;
+}
+p.h3,
+.card p.h3{
+    color: #4AA9FF !important;
+    font-size: 1.875rem !important;
+    font-weight: 600;
+}
+p.h3 span,.card p.h3 span{
+    color: #E95513;
+}
+.mytext p.h2{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #4AA9FF;
+    line-height: 4rem;
+}
+.mytext p{
+    color: #083863;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 0;
+}
+.mytext span{
+    color: #F7931E;
+}
+.pos{
+    position:sticky;
+    bottom: 3rem;
+}
+main>.container-fluid>.container {
+    padding: 0px;
+    min-height: 1300px;
+    background-image: url(../images/order-bg3.svg);
+    background-size: 60%;
+    background-position: 101% 95%;
+    background-repeat: no-repeat;
+}
+@media (max-width: 1199px) {
+    .mytext{
+        margin: 2rem;
+    }
+    .mytext p.h2{
+        font-size: 2rem;
+        font-weight: 600;
+        color: #4AA9FF;
+        line-height: 3rem;
+    }
+    .mytext p{
+        color: #083863;
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+    }
+}
+@media (max-width: 766px) {
+    main>.container-fluid>.container {
+        background-position: 100% 98%;
+        background-size: 90%;
+        height: calc(100% + 1em);
+    }
+    .h2{
+        text-align: center;
+    }
+    .h2 .code{
+    padding: .0125rem;
+    display:block;
+    width: 100%;
+    margin: .5rem 0px;
+    
+}
+    p.h3,.card p.h3{
+        font-size: 1.5rem !important;
+    }
+    .card{
+        margin: .75rem 0;
+        border: none;
+        border-radius: .3rem;
+        background-color: #FFFBEB;
+        padding: .75rem;
+        width: fit-content;
+        color: #083863;
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    ol{
+        margin-bottom: 0;
+    }
+    .mytext{
+        margin: 2rem 1.5rem;
+    }
+    .mytext p.h2{
+        font-size: 2rem;
+        font-weight: 600;
+        color: #4AA9FF;
+        line-height: 3rem;
+    }
+    .mytext p{
+        color: #083863;
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+    }
+}
+@media (max-width: 575px) {
+    main>.container-fluid>.container {
+        background-position: 100% 98%;
+        background-size: 90%;
+        height: calc(100% + 1em);
+    }
+    p span.cb{
+    color: #007BFF;
+    text-align: center;
+}
+    .mytext{
+        margin: 1rem;
+    }
+    .mytext p.h2{
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4AA9FF;
+        line-height: 2rem;
+    }
+    .mytext p{
+        color: #083863;
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    /* .pos{
+        position:sticky;
+        bottom: 3rem;
+    } */
+}

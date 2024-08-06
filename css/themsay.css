@@ -1,0 +1,341 @@
+.anchor{
+    margin: 1rem 0px;
+}
+.anchor a{
+    white-space:nowrap;
+}
+.anchor p{
+    margin-bottom: 0px;
+    font-size: 1.5rem;
+    color: #4AA9FF;
+    font-weight: 600;
+}
+.anchor p a:link,
+.anchor p a:visited{
+    color: #4AA9FF;
+}
+.anchor p a:hover,
+.anchor p a:focus{
+    color: #F7931E;
+}
+.sort{
+    padding:1rem;
+}
+.sort .card{
+    background-color: #4AA9FF;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFF;
+}
+.sort .card div{
+    display:inline-block;
+    padding: .125rem;
+}
+.sort .card span{
+    float: right;
+}
+.row.top{
+    margin: 0px .125rem;
+}
+.col-6.col-sm-4.col-md-3.col-lg-2{
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+background-color: transparent;
+/* width: 300px; */
+width: 100%;
+height: 200px;
+/* padding: 0px; */
+margin: 0px 0px 1rem;
+border-radius: .25rem;
+perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+border-radius: .25rem;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+-webkit-backface-visibility: hidden; /* Safari */
+backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+background-color: #EEEDEC;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+color: black;
+border-radius: .25rem;
+}
+.mymodal-top .card.boy,
+.mymodal-left .card.boy,
+.flip-card-front.boy{
+background-image: url(../images/image-boy.svg);
+}
+.mymodal-top .card.girl,
+.mymodal-left .card.girl,
+.flip-card-front.girl{
+background-image: url(../images/image-girl.svg);
+}
+/* Style the back side */
+.flip-card-back {
+padding: .25rem;
+border-radius: .25rem;
+background-color: #F7931E;
+color: white;
+transform: rotateY(180deg);
+overflow: hidden;
+}
+.flip-card-back p{
+margin-bottom: 0px;
+}
+.flip-card-front-header,
+.flip-card-front-footer{
+/* -webkit-backdrop-filter: saturate(180%) blur(10px);
+backdrop-filter: saturate(180%) blur(10px); */
+background-color: rgba(74, 169, 255, 0.6);
+color: #FFF;
+font-size: 1.25rem;
+}
+.flip-card-front-header{
+border-radius: .25rem .25rem 0px 0px;
+}
+.flip-card-front-footer{
+border-radius: 0px 0px .25rem .25rem;
+position:absolute;
+bottom: 0px;
+left: 0;
+right: 0;
+}
+.modal-header{
+background-color: #4AA9FF;
+color: #FFF;
+padding: 0.5rem .75rem;
+border-bottom: none;
+}
+.modal-header .close{
+color: #FFF;
+font-size: 1.75rem;
+}
+.modal-header .h3{
+margin-bottom: 0px;
+}
+.videobox {
+position: relative;
+width: 100%;
+height: 0;
+padding-bottom: 56.25%;
+}
+.videobox iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.modal-body{
+margin: 0px;
+padding: 0px;
+overflow: hidden;
+}
+.mymodal-top{
+align-items: center;
+background-color: #E6F6FF;
+padding: 1rem;
+position: sticky;
+top: 0;
+z-index: 999;
+overflow: hidden;
+}
+.mymodal-left{
+width: 33.333333%;
+background-color: #E6F6FF;
+display:inline-block;
+height: 100%;
+}
+.mymodal-top .card{
+height: 180px;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+box-shadow: #4AA9FF 0px 0px 1rem 0px;
+display:inline-block;
+}
+.mymodal-left .card{
+margin: 2rem;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+height: 220px;
+box-shadow: #4AA9FF 0px 0px 1rem 0px;
+}
+.mymodal-top .tip{
+/* left: 35%; */
+left: 28%;
+}
+.mymodal-top .lii{
+/* right: 10%; */
+right: 0;
+}
+.mymodal-top .tip,
+.mymodal-top .lii{
+position: absolute;
+top: 1rem;
+}
+.mymodal-top .tip,
+.mymodal-top .lii,
+.mymodal-left .row{
+margin: .375rem .5rem;
+font-size: 1.25rem;
+line-height: 2.25rem;
+}
+.mymodal-top .tip,
+.mymodal-left .row .col.tip{
+color:#F7931E;
+text-align: right;
+padding-right: .5rem;
+}
+.mymodal-top .lii,
+.mymodal-left .row .col.lii{
+color:#4AA9FF;
+padding-left: .5rem;
+}
+.mymodal-right{
+width: 66.66666%;
+height: 100%;
+display:inline-block;
+float:right;
+overflow-y: auto;
+}
+.mymodal-top .lii,
+.mymodal-top .tip{
+/* border: solid 1px #F00; */
+display:inline-block;
+padding-left: 0px;
+padding-right: 0px;
+}
+.modal-body.d-lg-none{
+overflow: hidden;
+background-color: #E6F6FF;
+}
+@media screen and (max-width: 991px){
+.anchor p{
+margin-bottom: 0px;
+font-size: 1.375rem;
+}
+.modal-body.d-lg-none{
+height: 32rem;
+}
+}
+@media screen and (max-width: 768px){
+.anchor p{
+margin-bottom: 0px;
+font-size: 1.25rem;
+}
+}
+
+@media screen and (max-width: 575px){
+.modal-body.d-lg-none{
+height: 25rem;
+}
+.flip-card {
+height: 180px;
+}
+.container-fluid{
+padding-right: 0px;
+padding-left: 0px;
+}
+.container{
+padding-right: .5rem;
+padding-left: .5rem;
+overflow-x:hidden;
+}
+.anchor p{
+font-size: 1.125rem;
+}
+.sort .card{
+font-size: 1.125rem;
+padding: .5rem;
+}
+.flip-card-front-header, .flip-card-front-footer {
+font-size: 1.375rem;
+}
+.modal-header .h3{
+font-size: 1.25rem;
+}
+.modal-header .close{
+margin: -1.25rem -1.25rem -1.25rem auto;
+}
+.mymodal-top{
+padding: .25rem;
+}
+.mymodal-top .card{
+margin: .5rem;
+height: 150px;
+}
+.mymodal-top .tip{
+padding-right: 0rem;
+left: 31%;
+}
+.mymodal-top .lii{
+padding-left: 0rem;
+}
+.mymodal-top .tip,
+.mymodal-top .lii{
+top: .5rem;
+margin:auto .0625rem;
+font-size: 1.125rem;
+line-height: 2rem;
+}
+.mymodal-top .col-5.card{
+max-width: calc(41.666667% - 1rem);
+}
+.flip-card-front-header,
+.flip-card-front-footer{
+font-size: 1.125rem;
+}
+
+}
+@media screen and (max-width: 360px){
+.modal-body.d-lg-none{
+height: 27.5rem;
+}
+.flip-card {
+height: 150px;
+}
+.flip-card-front-header, .flip-card-front-footer {
+font-size: 1.125rem;
+}
+.sort .card{
+font-size: 1rem;
+padding: .5rem;
+}
+.mymodal-top .card{
+height: 120px;
+}
+.mymodal-top .tip,
+.mymodal-top .lii{
+font-size: 1rem;
+line-height: 1.625rem;
+}
+}

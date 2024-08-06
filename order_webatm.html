@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebATM轉帳|行動學習網</title>
+    <link rel="stylesheet" href="css/bootstrap-4.3.1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- 引用icon當作文字變色 放大縮小 -->
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        p{
+            margin-bottom: 0px;
+        }
+        ol>li{
+            list-style-type: thumbs;
+        }
+        @counter-style thumbs {
+            system: extends decimal;
+            suffix: ")  ";
+            prefix: "(";
+            }
+
+        .card{
+            margin: 1.5rem;
+            border: 1px solid #4AA9FF;
+            font-size: 1.25rem;
+        }
+        .card-header{
+            background-color: #4AA9FF;
+            font-weight: 600;
+            font-size: 2rem;
+            color: #FFF;
+            letter-spacing: 3px;
+        }
+        .card-body{
+            color: #007BFF;
+            border-top: solid 1px #4AA9FF;
+            position: relative;
+            top: -1px;
+        }
+        .card-body a{
+            color: #F7931E;
+        }
+        .card-body span{
+            color: #00A99D;
+        }
+        .card-body .btn.mybtn{
+            color: #FFF;
+            padding: .75rem 1.75rem;
+            font-size: 1.5rem !important;
+            letter-spacing: normal;
+            font-weight: normal;
+            background-color: #00A99D;
+            float: right;
+        }
+        @media (max-width: 1199px){
+            .card-header{
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 991px){
+            .card-header{
+                font-size: 1.25rem;
+            }
+            .card-body{
+                font-size: 1.125rem;
+            }
+            .card-body .btn.mybtn{
+                padding: .5rem 1.5rem;
+                font-size: 1.25rem !important;
+                margin-top: .5rem;
+            }
+        }
+        @media (max-width: 575px){
+            .card-header{
+                font-size: 1.125rem;
+            }
+            .card-body{
+                font-size: 1rem;
+            }
+            .card-body .btn.mybtn{
+                padding: .5rem 1.5rem;
+                font-size: 1.125rem !important;
+                display: block;
+                width: 100%;
+            }
+        }
+        @media (max-width: 400px){
+            .card{
+                margin: 1rem;
+            }
+            .card-header{
+                padding: .5rem .75rem;
+                letter-spacing: normal;
+            }
+            .card-body{
+                padding: .75rem 1rem;
+                
+            }
+            ol{
+                margin-bottom: 0px;
+            }
+            .card-body .btn.mybtn{
+                padding: .5rem 1.5rem;
+                font-size: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid d-none d-md-block" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-l.jpg">
+        </div>
+        <div class="container-fluid d-md-none" style="margin: 0px;padding: 0px;">
+            <img class="img-fluid" src="images/header-s.jpg">
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid" style="background-color: #EEF6F9;">
+            <div class="container" style="background-color: #FFF;">
+                <img class="img-fluid d-none d-xl-inline-block" src="images/order-l-step3.svg">
+                <img class="img-fluid d-none d-sm-inline-block d-xl-none" src="images/order-step3.svg">
+                <img class="img-fluid d-sm-none" src="images/order-s-step3.svg">
+                <p class="h3 d-md-none">若無法使用讀卡機，請返回確認付款方式或使用桌上型電腦在進行操作。</p>
+                <div class="card">
+                    <div class="card-header">Step1.請先點選【我要檢測】按鈕，確認讀卡機已裝置妥當</div>
+                    <div class="card-body"><p>首次使用本付款方式者，須於玉山銀行網站 <a href="https://netbank.esunbank.com.tw/webatm/#/download" target="_blank">下載及安装WebATM元件 </a>以進行付款功能。</p></div>
+                    <div class="card-body">
+                        <p>請依序檢查以下項目：</p>
+                        <ol>
+                            <li>讀卡機是否已正確插入USBport。</li>
+                            <li>讀卡機驅動程式是否已正確安裝。</li>
+                            <li>確定「WebATM元件」是否已安裝完成或直接下載最新的「<a href="https://netbank.esunbank.com.tw/webatm/#/download" target="_blank">WebATM元件</a>」並執行。<br>(執行前請先關閉WebATM官方網站網頁)。</li>
+                            <li>請檢查Smart Card Service是否動。<a href="https://netbank.esunbank.com.tw/webatm/doctor/default.html" target="_blank">檢測懶人包</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Step2.確認【Check1~4】檢測通過，前往玉山銀行繳款</div>
+                    <div class="card-body">
+                        <p>感謝您参與行動學習網線上課程，您的WebATM裝置已通過檢測，</p>
+                        <p>完成繳費後系統將於<a href="javascript:;">24小時內</a>開通您的上課帳號，</p>
+                        <p>若有任何疑問，請於上班時間撥打(06)223-5003。</p>
+                        <br><br>
+                        <p>行動學習網　祝您金榜題名!!</p>
+                        <br>
+                        <span>→立即點選以下按鈕,前往玉山銀行進行繳費扣款動作。</span>
+                        <button class="btn mybtn">前往WebATM繳費</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
